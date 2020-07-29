@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="menuMapper">
+
+<!-- menuno / menusal / menusajin / menuname / sNum
+메뉴번호  /  메뉴가격      /  메뉴사진     / 메뉴이름          / 음식점고유번호 -->
+
+	<!-- 장바구니담기 했을떄 메뉴번호 넘겨주기 -->
+	<select id="findBymenuno" resultType="menu">
+		select menuno, menuname, menusal, menusajin, s_num sNum
+		from menu
+		where menuno=#{menuno}
+	</select>
+	
+
+<select id="findAll" resultType="menu"><!-- 리스트에 보여질 메뉴내용들  -->
+	select menuno, menusal, menusajin, menuname, s_num sNum from menu 
+</select>
+
+<select id="findAllById" resultType="menu">
+	select menuno, menusal, menusajin, menuname, s_num sNum 
+	from menu where s_num=#{sNum}
+</select>
+
+
+<select id="findById" resultType="menu"> 
+	select menuno, menusal, menusajin, menuname, s_num sNum 
+	from menu where menuno=#{menuno} and rownum=1
+</select>
+
+
+<insert id="insert">
+	<selectKey keyProperty="menuno" resultType="int" order="BEFORE">
+		select menu_seq.nextval from dual
+	</selectKey>
+	insert into menu(menuno, menusal, menusajin, menuname, s_num) 
+	values (#{menuno},#{menusal},#{menusajin, jdbcType=VARCHAR},#{menuname},#{sNum})
+</insert>
+
+<!-- menuno / menusal / menusajin / menuname / sNum
+메뉴번호  /  메뉴가격      /  메뉴사진     / 메뉴이름          / 음식점고유번호 -->
+
+<update id="update">
+	update menu 
+	<trim suffixOverrides="," prefix="set">
+		<if test="menusal!=null">menusal=#{menusal},</if>
+		<if test="menusajin!=null">menusajin=#{menusajin},</if>
+		<if test="menuname!=null">menuname=#{menuname},</if>
+	</trim>
+	where menuno=#{menuno} and rownum=1
+</update>
+
+<!-- 메뉴 하나 삭제  -->
+<delete id="delete">
+	delete from menu where menuno=#{menuno} and rownum=1
+</delete>
+
+<!-- 메뉴 전체 삭제 -->
+<delete id="deleteBySnum">
+	delete from menu where s_num=#{sNum}
+</delete>
+</mapper>

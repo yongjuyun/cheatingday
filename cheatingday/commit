@@ -1,0 +1,162 @@
+================ 예시 commit ================
+작성날짜 : 2020.06.24
+작성내용 : 회원가입 dao,dto,controller 
+변경내용 : dao name => irum으로 변경
+추가예정 내용 : service
+================ 공통 commit ================
+2020.06.24
+SQL 추가
+2020.06.25
+mapper폴더 추가(freeboardMapper 추가)
+Page dto 리스트입력
+system 폴더 추가 (msg.jsp추가)
+pwdEncoder를 위한 서큐리티 추가및 수정
+시큐리티설정
+중복확인 수정
+security-context 로그인 핸들러 설정
+(loginsuccessHandler)
+(loginFailureHandler)
+================ 메인 commit ================
+- 2020.06.25
+	MainController 생성
+	MainService 생성
+	AuthorityDao 생성
+- 2020.06.26
+	main 폴더 생성 - managerjoin.jsp 추가
+- 2020.06.28
+	valid.js 생성
+	main.jsp 생성
+	main.css 생성
+	header.jsp / footer.jsp / nav.jsp 생성
+- 2020.06.29
+	MainRestController 생성
+	MainRestService 생성
+- 2020.06.30
+	foodcategory.jsp 생성
+	login.jsp 생성
+- 2020.07.01
+	managerjoin.jsp 수정
+	userjoin.jsp 생성
+- 2020.07.02
+	join.jsp 생성 (일반/사업자 회원가입 선택창)
+	MainRestControllerAdvice 생성
+- 2020.07.03
+	* 일반 회원가입 완료
+	* 사업자 회원가입 완료
+	* 로그인/로그아웃 완료
+	LoginSuccessHandler 생성
+	LoginFailureHandler 생성
+- 2020.07.06
+	* 일반/사업자 아이디찾기 완료
+	userjoin.jsp 주소 api 추가
+	userfindid.jsp 생성
+	managerfindid.jsp 생성
+	usefindpwd.jsp 생성
+- 2020.07.07
+	* 비밀번호 찾기 완료
+- 2020.07.08
+	* 사업자 회원가입 오류 수정
+	LoginSuccessHandler
+- 2020.07.10
+	* 일반/사업자 비밀번호찾기 완료!!!!!!!!!!!!!!!!! 오류 드디ㅓㅇ 다고침!!!!
+	changepwd.jsp 생성
+- 2020.07.14
+	* header.jsp -> 카카오 지도 API 추가, 현재위치 추적
+- 2020.07.20
+	* 로그인 아이디저장 가능
+- 2020.07.21
+	* 메인화면 주소로 가게 검색 가능
+	
+	
+	
+================ 회원 commit =================
+2020.07.03
+mypage.jsp
+check_pwd.jsp
+change_pwd.jsp 추가
+2020.06.30
+reviewMapper추가 
+2020.06.26
+pointMapper 추가
+favoriteMapper 추가
+UserMvcController 추가
+UserRestController 추가
+AuthorityDao 추가
+FavoriteDao 추가
+PointDao 추가
+UserDto 추가
+FavoriteEntity 추가
+PointEntity 추가
+EmailEXistException추가
+JobFailException 추가
+UsernameExistException추가
+UserNotFoundException추가
+UserService추가
+UserRestService추가
+AuthorityPropertyEditor추가
+DatePropertyEditor추가
+2020.06.25
+user Entity 추가
+userDao추가
+userMapper 추가
+2020.06.23
+userDaoTest 추가
+userDto추가
+userService 추가
+userException 추가
+================ 주문/결제 commit ================
+07.14.14:52
+entity,service,controller,jsp 작업 완성
+예정 : 카카오 API를 이용하여 결제하기
+================ 사업자 commit ================
+06.25.9:54 menu entity/ menu dao 생성
+10:37 mybatis-config.xml : menuentity 생성
+11:42 menuMapper.xml 작성
+3:50 menudao 생성 menumapper 생성 . 
+4:05 menuDaoTest 생성
+06.26.3:45 menuController, menuService 생성
+4:18 serviceTest 작성
+5:00main.jsp작성
+manager>menulist.jsp작성
+7:45 입점신청Sql추가 . StoreApplyInsert entity생성. storeEntity 작성
+06.28. 6:32 입점신청 entity,dao,dto,service,controller 생성
+            DB에 storeapplyinsert sequence 생성
+                          입점신청 daotest 성공-확신은안선다.
+07.02 메뉴관리 완서유ㅠㅠ
+06.29 5:10 입점신청 컨트롤러까지 완성 /테스트 성공
+                        매니저 내정보 읽기, 업뎃 컨트롤러까지 완성/ 테스트 성공
+06.30 메뉴리스트jsp                   
+07.02 8:24 가게관련 jsp 빼고 다함.
+07.03 가게jsp
+================ 관리자 commit ================
+2020.06.25
+qna 엔티티 작성
+공지사항 엔티티작성
+입점안내 엔티티작성
+qna게시판 dao작성
+공지사항 dao dto service controller작성
+2020.06.26
+문의답변 entity mapper작성(오류) DAO 
+조인제거및 전체수정 qna게시판 dao까지작성
+문의답변 서비스까지작성
+20.06.30
+qna게시판 마무리작업 및 jsp테스트
+관리자 컨트롤러작성
+jsp작성
+================ 자유게시판 commit ================
+2020.06.24
+freeboardEntity, Attachment Entity 추가
+commentEntity 추가
+2020.06.25
+freeBoarddao 추가
+freeBoardMapper.xml 추가
+경로 재설정, freeboardtest 추가
+commentDao 추가
+attachment Dao 추가
+commentmapper.xml 추가
+commentTest 실행
+attachmentTest 실행
+freeBoard Test  추가
+freeBoard Service 추가
+2020.06.26
+수정
